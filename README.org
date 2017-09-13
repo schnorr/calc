@@ -1,7 +1,6 @@
 * Calculator
 
-This calculator is written in flex/bison and follows the very nice
-explanation on the Reverse Polish Notation Calculator of the [[http://dinosaur.compilertools.net/bison/bison_5.html#SEC16][Bison
+This calculator is inspired from the Reverse Polish Notation Calculator of the [[http://dinosaur.compilertools.net/bison/bison_5.html#SEC16][Bison
 Documentation]].
 
 1. To compile it, just type =make=.
