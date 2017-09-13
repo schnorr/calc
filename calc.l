@@ -12,9 +12,7 @@ real {integer}("."{integer})?{exponent}?
 %%
 
 {white} { }
-{real} { yylval=atof(yytext); 
- return NUMBER;
-}
+{real} { yylval=atof(yytext); return NUMBER; }
 
 "+" return PLUS;
 "-" return MINUS;
