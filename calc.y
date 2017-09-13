@@ -2,6 +2,8 @@
 #include <math.h>
 #include <stdio.h>
 #define YYSTYPE double
+int yyerror (char *s);
+extern int yylex (void);
 %}
 
 %token NUMBER
