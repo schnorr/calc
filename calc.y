@@ -42,9 +42,10 @@ int yyerror(char const *s) {
 }
 
 int main() {
-  if (yyparse())
-     fprintf(stderr, "Successful parsing.\n");
-  else
-     fprintf(stderr, "error found.\n");
+    int ret = yyparse();
+    if (ret){
+	fprintf(stderr, "%d error found.\n",ret);
+    }
+    return 0;
 }
 
