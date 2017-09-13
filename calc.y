@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #define YYSTYPE double
-int yyerror (char *s);
+int yyerror (char const *s);
 extern int yylex (void);
 %}
 
@@ -36,7 +36,7 @@ Expression: LEFT Expression RIGHT { $$ = $2; };
 
 %%
 
-int yyerror(char *s) {
+int yyerror(char const *s) {
   printf("%s\n", s);
 }
 
