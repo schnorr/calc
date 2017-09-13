@@ -1,7 +1,6 @@
 %{
 #define YYSTYPE double
 #include "calc.tab.h"
-#include <stdlib.h>
 %}
 
 white [ \t]+
