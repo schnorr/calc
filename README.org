@@ -7,9 +7,9 @@ Documentation]].
 1. To compile it, just type =make=.
 2. Run the program with =./calc=.
 
-Here's an example of non-iteractive utilization
+Here's an example of non-iteractive utilization:
 
-#+begin_src shell :results output
+#+begin_src shell :results both
 echo "2*3+4/(3+9)" | ./calc
 #+end_src
 
