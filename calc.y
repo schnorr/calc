@@ -16,6 +16,7 @@ extern int yylex (void);
 %left NEG
 %right POWER
 
+%error-verbose
 %start Input
 %%
 
