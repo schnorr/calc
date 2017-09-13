@@ -19,26 +19,20 @@ extern int yylex (void);
 %start Input
 %%
 
-Input:
-    
-     | Input Line
-;
+Input: /* empty */;
+Input: Input Line;
 
-Line:
-     END
-     | Expression END { printf("Result: %f\n", $1); }
-;
+Line: END
+Line: Expression END { printf("Result: %f\n", $1); }
 
-Expression:
-     NUMBER { $$=$1; }
-| Expression PLUS Expression { $$=$1+$3; }
-| Expression MINUS Expression { $$=$1-$3; }
-| Expression TIMES Expression { $$=$1*$3; }
-| Expression DIVIDE Expression { $$=$1/$3; }
-| MINUS Expression %prec NEG { $$=-$2; }
-| Expression POWER Expression { $$=pow($1,$3); }
-| LEFT Expression RIGHT { $$=$2; }
-;
+Expression: NUMBER { $$=$1; };
+Expression: Expression PLUS Expression { $$ =$1 + $3; };
+Expression: Expression MINUS Expression { $$ = $1 - $3; };
+Expression: Expression TIMES Expression { $$ = $1 * $3; };
+Expression: Expression DIVIDE Expression { $$ = $1 / $3; };
+Expression: MINUS Expression %prec NEG { $$ = -$2; };
+Expression: Expression POWER Expression { $$ = pow($1, $3); };
+Expression: LEFT Expression RIGHT { $$ = $2; };
 
 %%
 
