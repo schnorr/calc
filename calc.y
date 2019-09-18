@@ -27,12 +27,12 @@ Line: END
 Line: Expression END { printf("Result: %f\n", $1); }
 
 Expression: NUMBER { $$=$1; };
-Expression: Expression PLUS Expression { $$ =$1 + $3; };
-Expression: Expression MINUS Expression { $$ = $1 - $3; };
-Expression: Expression TIMES Expression { $$ = $1 * $3; };
-Expression: Expression DIVIDE Expression { $$ = $1 / $3; };
-Expression: MINUS Expression %prec NEG { $$ = -$2; };
-Expression: Expression POWER Expression { $$ = pow($1, $3); };
+Expression: Expression PLUS Expression { $$ =$1 + $3; printf("%f + %f\n", $1, $3); };
+Expression: Expression MINUS Expression { $$ = $1 - $3; printf("%f - %f\n", $1, $3); };
+Expression: Expression TIMES Expression { $$ = $1 * $3; printf("%f * %f\n", $1, $3); };
+Expression: Expression DIVIDE Expression { $$ = $1 / $3; printf("%f / %f\n", $1, $3); };
+Expression: MINUS Expression %prec NEG { $$ = -$2; printf("- %f\n", $2); };
+Expression: Expression POWER Expression { $$ = pow($1, $3); printf("%f ^ %f\n", $1, $3); };
 Expression: LEFT Expression RIGHT { $$ = $2; };
 
 %%
