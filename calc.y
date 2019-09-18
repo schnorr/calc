@@ -16,7 +16,7 @@ extern int yylex (void);
 %left NEG
 %right POWER
 
-%error-verbose
+%define parse.error verbose
 %start Input
 %%
 
